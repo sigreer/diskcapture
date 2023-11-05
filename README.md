@@ -41,11 +41,10 @@ Here's your options for capturing the disk:
 Please enter the number of the method you'd like to choose.
 ```
 ### Methods
-##### dd if=${disk} bs=${block_size} count=${total_sectors} | pv -s ${total_bytes} | gzip -${compressionlevel} > ${filename}
-##### dd if=${disk} bs=${block_size} count=${total_sectors} of=${filename} status=progress
-##### dd if=${disk} bs=${block_size} count=${total_sectors} | gzip -c > ${filename}
-##### dd bs=1M iflag=fullblock if=${disk} status=progress | gzip >${filename}
-##### dd bs=1M iflag=fullblock if=${disk} status=progress | zstd -16v >${filename}
-
-### Work In Progress
-I have a list of about twenty different methods that need adding when I've got time.
+```
+dd if=${disk} bs=${block_size} count=${total_sectors} | pv -s ${total_bytes} | gzip -${compressionlevel} > ${filename}
+dd if=${disk} bs=${block_size} count=${total_sectors} of=${filename} status=progress
+dd if=${disk} bs=${block_size} count=${total_sectors} | gzip -c > ${filename}
+dd bs=1M iflag=fullblock if=${disk} status=progress | gzip >${filename}
+dd bs=1M iflag=fullblock if=${disk} status=progress | zstd -16v >${filename}
+```
