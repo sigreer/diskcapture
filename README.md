@@ -1,7 +1,7 @@
 # diskcapture
-A single, interactive shell script that gets added to every time I find a new method of capturing disk and partition images using Linux CLI. Borne out of the frustration of not knowing which method to choose, how to calculate block size, sector count, gauge progress, minimise errors and maximise compression. 
+A single, interactive shell script that gets added to every time I find a new method of capturing disk and partition images using Linux CLI. Borne out of the frustration of having to do a lot of custom imaging but hearing conflicting information about which method is the quickest and most reliable. Having to manually calculate block size and count sectors is also tedious and prone to error. This script takes care of that.
 
-Currently uses combinations of:
+It's an ongoing project currently supporting combinations of:
 - dd
 - pv
 - gzip
@@ -10,10 +10,13 @@ Currently uses combinations of:
 ### Usage
 ```
 ./diskcapture.sh <diskname> <outputfilename>
-
+```
 ## eg.
+```
 ./diskcapture.sh sda image
-
+```
+## Returns:
+```
 /dev/sda
 240055295488 bytes
 58607249 sectors
